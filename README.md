@@ -3,7 +3,7 @@
 
 This repository include development shell (using [nix develop](https://nixos.org/manual/nix/stable/command-ref/new-cli/nix3-develop.html)) in which it is easy to test how [apiserver-network-proxy](https://github.com/kubernetes-sigs/apiserver-network-proxy) components works and how to reuse them in own code.
 
-[![asciicast](https://asciinema.org/a/IiPk4hXscDwE5ee3rDl7a0uHo.svg)](https://asciinema.org/a/IiPk4hXscDwE5ee3rDl7a0uHo?speed=1.6)
+[![asciicast](https://asciinema.org/a/600285.svg)](https://asciinema.org/a/600285?speed=1.6)
 To run development shell locally first [nix](https://nixos.org/download.html) have to be installed locally. Even the included [flake.nix](flake.nix) provides reproducible builds, to properly simulate environments it depends on presence of [network namespaces](https://man7.org/linux/man-pages/man7/network_namespaces.7.html) and iptables which are available on linux environments.
 
 [clients/](clients) dir contains example go implementation of grpc/tcp clients which dials into proxy server and pass [net.Conn](https://pkg.go.dev/net#Conn) interface to private ns endpoint connection constructor. This [article](https://tilde.town/~hut8/post/grpc-connections/) in my opinion is a good description of tunnel approach. Clients will be available in development shell as `proxy-grpc` and `proxy-tcp`.
