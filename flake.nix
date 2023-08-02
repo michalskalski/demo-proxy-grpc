@@ -152,6 +152,7 @@
                       PROXY_SERVER_CERTS = "--server-ca-cert=$DEMO_CERTS_DIR/certs/frontend/issued/ca.crt --server-cert=$DEMO_CERTS_DIR/certs/frontend/issued/proxy-frontend.crt --server-key=$DEMO_CERTS_DIR/certs/frontend/private/proxy-frontend.key --cluster-ca-cert=$DEMO_CERTS_DIR/certs/agent/issued/ca.crt --cluster-cert=$DEMO_CERTS_DIR/certs/agent/issued/proxy-frontend.crt --cluster-key=$DEMO_CERTS_DIR/certs/agent/private/proxy-frontend.key";
                       PROXY_AGENT_CERTS = "--ca-cert=$DEMO_CERTS_DIR/certs/agent/issued/ca.crt --agent-cert=$DEMO_CERTS_DIR/certs/agent/issued/proxy-agent.crt --agent-key=$DEMO_CERTS_DIR/certs/agent/private/proxy-agent.key";
                       PROXY_CLIENT_CERTS = "--ca-cert=$DEMO_CERTS_DIR/certs/frontend/issued/ca.crt --client-cert=$DEMO_CERTS_DIR/certs/frontend/issued/proxy-client.crt --client-key=$DEMO_CERTS_DIR/certs/frontend/private/proxy-client.key";
+                      # https://github.com/direnv/direnv/wiki/PS1
                       nix_shell_ps1="[grpc-proxy-demo]";
                       SUDO_PRESERVE = "--preserve-env=PATH --preserve-env=RUST_LOG --preserve-env=RUST_SRC_PATH --preserve-env=DEMO_CERTS_DIR --preserve-env=PROXY_SERVER_CERTS --preserve-env=PROXY_AGENT_CERTS --preserve-env=PROXY_CLIENT_CERTS";
                       shellHook = ''
